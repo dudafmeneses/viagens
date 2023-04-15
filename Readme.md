@@ -34,3 +34,17 @@ Comandos para usar o projeto
 ### subir o rails no servidor 3001
 
 ```rails s -p 3001```
+
+## FRONTEND
+
+### Entrar na pasta
+
+``` cd frontend ```
+
+### Instalar as ferramentas
+
+``` npm install ```
+
+### Iniciar o React
+
+``` npm start ```
