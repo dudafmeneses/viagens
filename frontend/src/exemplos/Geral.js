@@ -6,7 +6,8 @@ function Geral(){
         <>
             <FunctionSimples/>
             <FunctionDupla/>
-            <Botao>Entrar</Botao>
+            <Botao classe="botao purple"> Entrar </Botao>
+            <Botao classe="botao blue"> Sair </Botao>
         </>
     )
 }

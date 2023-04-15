@@ -1,6 +1,9 @@
+import './Botao.css'
 function Botao(props){
     return(
-        <button>{props.children}</button>
+        <button className={props.classe}>
+            {props.children}
+            </button>
     )
 }
 
