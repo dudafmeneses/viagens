@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 function App() {
   const [travels,setTravels] = useState([]);
-  const [travel, setTravel] = useState({nome:''})
+  const [travel, setTravel] = useState({nome:'', data:'', price:0, desc:''})
   useEffect(()=>{
     axios.get('http://localhost:3001/api/v1/travels')
       .then(resposta=>setTravels(resposta.data))
@@ -16,7 +16,10 @@ function App() {
         console.log(res.data)
         setTravels([...travels,res.data])
         setTravel({
-          nome: ''
+          nome: '',
+          data: '',
+          price: 0,
+          desc:''
         })
       })
       .catch (error=>console.log(error))
