@@ -2,6 +2,7 @@ import './App.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Form from './components/Form'
+import Card from './components/Card'
 function App() {
   const [travels,setTravels] = useState([]);
   const [travel, setTravel] = useState({nome:'', data:'', price:0, desc:''})
@@ -33,7 +34,16 @@ function App() {
         EnvioFormulario = {EnvioFormulario}
       />
       {
-        travels.map(viagem=><h1 key={viagem.id}>{viagem.nome}</h1>)
+        travels.map(viagem=>
+          <Card
+            key = {viagem.id}
+            id = {viagem.id}
+            nome = {viagem.nome}
+            data = {viagem.data}
+            desc = {viagem.desc}
+            price = {viagem.price}
+          />
+          )
       }
     </div>
   );
