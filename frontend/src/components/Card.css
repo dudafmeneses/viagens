@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,300&display=swap');
+
+.Card{
+    font-family: 'Roboto Condensed', sans-serif;
+    width: 256px;
+    min-height: 340px;
+    background-color:rgb(61, 61, 240);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}

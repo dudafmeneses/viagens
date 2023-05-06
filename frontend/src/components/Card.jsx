@@ -3,7 +3,7 @@ function Card(props){
     const {id,data,desc,price} = props
     return (
         <>
-            <div>
+            <div className = "Card">
                 <h1>{props.nome}</h1>
                 <div className = "conteudoCard">
                     <p>{desc}</p>

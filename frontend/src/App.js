@@ -33,18 +33,20 @@ function App() {
         setTravel = {setTravel}
         EnvioFormulario = {EnvioFormulario}
       />
-      {
-        travels.map(viagem=>
-          <Card
-            key = {viagem.id}
-            id = {viagem.id}
-            nome = {viagem.nome}
-            data = {viagem.data}
-            desc = {viagem.desc}
-            price = {viagem.price}
-          />
-          )
-      }
+      <div className = "App">
+        {
+          travels.map(viagem=>
+            <Card
+              key = {viagem.id}
+              id = {viagem.id}
+              nome = {viagem.nome}
+              data = {viagem.data}
+              desc = {viagem.desc}
+              price = {viagem.price}
+            />
+            )
+        }
+      </div>
     </div>
   );
 }
