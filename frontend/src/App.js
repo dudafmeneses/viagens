@@ -33,7 +33,7 @@ function App() {
         setTravel = {setTravel}
         EnvioFormulario = {EnvioFormulario}
       />
-      <div className = "App">
+      <div className = "cards">
         {
           travels.map(viagem=>
             <Card
