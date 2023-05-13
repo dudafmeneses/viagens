@@ -20,6 +20,9 @@ class Api::V1::TravelsController < ApplicationController
   end
 
   def destroy
+    @travel = Travel.find(params[:id])
+    @travel.destroy
+    render json:{message: "Sua mensagem foi deletada com sucesso!"}
   end
   private
   def travel_params
