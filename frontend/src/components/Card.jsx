@@ -1,4 +1,5 @@
 import "./Card.css"
+import {FiTrash2} from 'react-icons/fi'
 function Card(props){
     const {id,data,desc,price} = props
     return (
@@ -12,8 +13,8 @@ function Card(props){
                 </div>
                 <div className = "bottom">
                     <div className = "botoes">
-                        <div>
-                            deletar
+                        <div onClick={()=>props.deleteTravel(id)}>
+                        <FiTrash2 size={28}/>
                         </div>
                         <div className = "icons">
 
