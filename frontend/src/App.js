@@ -18,6 +18,13 @@ const deleteTravel = (id)=>{
     .then(res=>{
       console.log(res.data)
       setTravels(travels.filter(t=>t.id !== id))
+      setTravel({
+        nome: '',
+        data: '',
+        price:'',
+        desc:''
+      })
+      setEditID(-1)
     })
     .catch(erro=>console.log("Erro ao deletar"))
 }
