@@ -36,20 +36,23 @@ const deleteTravel = (id)=>{
         console.log(erro)
       })
   }
+  function CadastrarViagem(event){
+    axios.post('http://localhost:3001/api/v1/travels', {travel})
+    .then (res=>{
+      console.log(res.data)
+      setTravels([...travels,res.data])
+      setTravel({
+        nome: '',
+        data: '',
+        price: 0,
+        desc:''
+      })
+    })
+    .catch (error=>console.log(error))
+  }
   function EnvioFormulario(event){
     event.preventDefault();
-    axios.post('http://localhost:3001/api/v1/travels', {travel})
-      .then (res=>{
-        console.log(res.data)
-        setTravels([...travels,res.data])
-        setTravel({
-          nome: '',
-          data: '',
-          price: 0,
-          desc:''
-        })
-      })
-      .catch (error=>console.log(error))
+    CadastrarViagem(travel)
   }
   return (
     <div className="App">
