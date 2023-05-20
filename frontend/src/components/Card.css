@@ -26,12 +26,12 @@
     }
 }
 
-.card:hover{
+.Card:hover{
     border: 1px solid yellow;
 }
 
-.card.h1{
-    color: orange;
+.Card h1{
+    color: rgb(199, 173, 247);
     font-size: 1.2rem;
     text-align: center;
 }

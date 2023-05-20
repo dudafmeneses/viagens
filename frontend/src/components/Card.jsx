@@ -15,14 +15,17 @@ function Card(props){
         <>
             <div className ={isDelete? "Card disappear": "Card"}>
                 <h1>{props.nome}</h1>
-                <div className = "conteudoCard">
+                <div className = 'conteudoCard'>
                     <p>{desc}</p>
                     <p>{FormatarData(data)}</p>
-                    <p>{price}</p>
+                    <p className="price">{price}</p>
                 </div>
                 <div className = "bottom">
-                    <div className = "botoes">
-                        <div onClick={()=>deleteMode()}>
+                    <div className = "btns">
+                        <div onClick={()=>deleteMode()}
+                        id ="trashDelete"
+                        className='icons'
+                        >
                         <FiTrash2 size={28}/>
                         </div>
                         <div className = "icons">
