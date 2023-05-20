@@ -53,7 +53,7 @@
 }
 
 #trashDelete:hover{
-    color: red;
+    color: rgb(255, 50, 255);
 }
 
 #editIcon:hover{

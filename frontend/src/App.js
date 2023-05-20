@@ -20,7 +20,21 @@ const deleteTravel = (id)=>{
     })
     .catch(erro=>console.log("Erro ao deletar"))
 }
-
+  const editTravel=(id, travel)=>{
+    axios.put('http://localhost:3001/api/v1/travels/${id}',{travel})
+      .then(res=>{
+        let newListaDeViagens = travels.map(v=>{
+          if (v.id === id){
+            return res.data
+          }
+          return v
+        })
+        setTravels(newListaDeViagens)
+      })
+      .catch(erro=>{
+        console.log(erro)
+      })
+  }
   function EnvioFormulario(event){
     event.preventDefault();
     axios.post('http://localhost:3001/api/v1/travels', {travel})
