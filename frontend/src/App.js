@@ -22,7 +22,7 @@ const deleteTravel = (id)=>{
     .catch(erro=>console.log("Erro ao deletar"))
 }
   const editTravel=(id, travel)=>{
-    axios.put('http://localhost:3001/api/v1/travels/${id}',{travel})
+    axios.put(`http://localhost:3001/api/v1/travels/${id}`  ,{travel})
       .then(res=>{
         let newListaDeViagens = travels.map(v=>{
           if (v.id === id){
@@ -52,7 +52,18 @@ const deleteTravel = (id)=>{
   }
   function EnvioFormulario(event){
     event.preventDefault();
-    CadastrarViagem(travel)
+    if (editId !== -1){
+      editTravel(editId, travel)
+      setEditID (-1)
+      setTravel({
+        nome: '',
+        data: '',
+        price:'',
+        desc:''
+      })
+      return
+    }
+    CadastrarViagem(travel);
   }
   return (
     <div className="App">
