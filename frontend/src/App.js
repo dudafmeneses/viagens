@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Form from './components/Form'
 import Card from './components/Card'
+import Popup from './components/Popup';
 function App() {
   const [travels,setTravels] = useState([]);
   const [travel, setTravel] = useState({nome:'', data:'', price:0, desc:''})
@@ -96,6 +97,7 @@ const deleteTravel = (id)=>{
             />
             )
         }
+        <Popup/>
       </div>
     </div>
   );

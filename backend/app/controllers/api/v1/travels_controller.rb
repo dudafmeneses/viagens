@@ -12,11 +12,17 @@ class Api::V1::TravelsController < ApplicationController
     if @travel.save
       render json: @travel
     else
-      render json: {errors: @travel.errors, messade: "deu errado"}, status: :unprocessable_entity
+      render json: {errors: @travel.errors, message: "o cadastro deu errado"}, status: :unprocessable_entity
     end
   end
 
   def update
+    @travel = Travel.find(params[:id])
+    if @travel.update(travel_params)
+      render json: @travel
+    else
+      render json: {errors: @travel.errors, message: "a edição deu errado"}, status: :unprocessable_entity
+    end
   end
 
   def destroy
