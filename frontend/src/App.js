@@ -8,6 +8,8 @@ function App() {
   const [travels,setTravels] = useState([]);
   const [travel, setTravel] = useState({nome:'', data:'', price:0, desc:''})
   const [editId, setEditID] =useState(-1);
+  const [showPopup, setShowPopup] = useState (false);
+  const [popuContent, setPopupContent] = useState ({message: '', color: ''});
   useEffect(()=>{
     axios.get('http://localhost:3001/api/v1/travels')
       .then(resposta=>setTravels(resposta.data))
