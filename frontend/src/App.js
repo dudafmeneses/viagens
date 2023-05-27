@@ -99,7 +99,10 @@ const deleteTravel = (id)=>{
             />
             )
         }
-        <Popup/>
+        {showPopup?
+          <Popup/>
+          : null
+        }
       </div>
     </div>
   );
