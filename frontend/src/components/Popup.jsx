@@ -1,9 +1,9 @@
 import "./Popup.css"
 
-function Popup(){
+function Popup({message, color}){
     return(
-        <div className="popup">
-            Batata
+        <div className={`popup ${color}`}>
+            {message}
         </div>
     )
 }
