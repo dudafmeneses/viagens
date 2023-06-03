@@ -10,7 +10,7 @@ class Api::V2::TravelsController < ApplicationController
   def create
     @travel = Travel.new(travel_params)
     if @travel.save
-      render json: @travel
+      render json: TravelSerializer.new(@travel).serializable_hash[:data][:attributes]
     else
       render json: {errors: @travel.errors, message: "o cadastro deu errado"}, status: :unprocessable_entity
     end
